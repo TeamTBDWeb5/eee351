@@ -1,0 +1,15 @@
+* NGSPICE file created from EEE351_inv.ext - technology: sky130A
+
+.subckt sky130_fd_pr__pfet_01v8_XPMKZ5 a_n108_n1000# w_n246_n1219# a_50_n1000#
+X0 a_50_n1000# a_n50_n1097# a_n108_n1000# w_n246_n1219# sky130_fd_pr__pfet_01v8 ad=2.9 pd=20.58 as=2.9 ps=20.58 w=10 l=0.5
+.ends
+
+.subckt sky130_fd_pr__nfet_01v8_PVEW3M a_n210_n274# a_50_n100# a_n108_n100# a_n50_n188#
+X0 a_50_n100# a_n50_n188# a_n108_n100# a_n210_n274# sky130_fd_pr__nfet_01v8 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+.ends
+
+.subckt EEE351_inv Vin VSS VDD Vout
+XXM1 VDD VDD Vout sky130_fd_pr__pfet_01v8_XPMKZ5
+XXM2 VSS VSS Vout Vin sky130_fd_pr__nfet_01v8_PVEW3M
+.ends
+
